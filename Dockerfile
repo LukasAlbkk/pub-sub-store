@@ -13,5 +13,10 @@ CMD [ "node", "app.js" ]
 
 FROM base AS shipping-service
 ADD  services/shipping/ .
-RUN npm install --only=production 
+RUN npm install --only=production
+CMD [ "node", "app.js" ]
+
+FROM base AS report-service
+ADD  services/report/ .
+RUN npm install --only=production
 CMD [ "node", "app.js" ]
